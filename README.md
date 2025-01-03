@@ -3,5 +3,24 @@ The official PyTorch implementation of "A deep learning method for field boundar
 
 
 ## Sample process
+Experimental data for Agricultural Parcels can refer to our another repository  [The-collected-and-outlined-cropland-parcel](https://github.com/BNU-zhu/The-collected-and-outlined-cropland-parcel), which summarizes some of the data we have collected and outlined<br> 
 If your images and boundary/region samples are unsegmented<br>  
-please refer to the **Sample process** steps in our other repository, [CLPs-delineation](https://github.com/BNU-zhu/CLPs-delineation).
+please refer to the **Sample process** steps in our another repository, [CLPs-delineation](https://github.com/BNU-zhu/CLPs-delineation).
+
+
+## Requirements
+`PyTorch  
+TensorboardX  
+GDAL  
+OpenCV   
+PIL  
+numpy  
+tqdm  
+scikit-learn`  <br>
+
+The code is tested under a Linux desktop with torch 1.2.0 and Python 3.6 <br>
+
+
+## Run the model
+The training and prediction process can be referred to [CLPs-delineation](https://github.com/BNU-zhu/CLPs-delineation)<br>  
+The corresponding **dataloder.py** and **train.py** of this repository, as well as the pre-trained models, will be uploaded later.
