@@ -20,5 +20,4 @@ The code is tested under a Linux desktop with torch 1.2.0 and Python 3.6 <br>
 
 
 ## Run the model
-The training and prediction process can be referred to [CLPs-delineation](https://github.com/BNU-zhu/CLPs-delineation)<br>  
 The corresponding **dataloder.py** and **train.py** of this repository, as well as the pre-trained models, will be uploaded later.
