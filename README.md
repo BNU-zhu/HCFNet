@@ -49,6 +49,11 @@ For test datasets, the same structure as the above.<br>
 
 ## Run the model
 First, modify the path in train.py, (note that --train_path should point to the image folder).<br>
+
+Our image loading and model parameters are currently for 3-band images. <br>
+If you use multi-band images, <br>
+you need to modify the image normalization parameters in the `image_transform function` of `dataloader_2.py`, and specify the `input_channels parameter` for HCFNet.<br>
+
 When running train.py, there are two options:<br>
 
 Directly run `python train.py`.<br>
