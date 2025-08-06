@@ -54,8 +54,8 @@ Our image loading and model parameters are currently for 3-band images. <br>
 If you use multi-band images, <br>
 you need to modify the image normalization parameters in the `image_transform function` of `dataloader_2.py`, and specify the `input_channels parameter` for HCFNet.<br>
 
-When running train.py, there are two options:<br>
+**When running train.py, there are two options**:<br>
 
-Directly run `python train.py`.<br>
+**Directly run `python train.py`**.<br>
 
-Execute `accelerate launch train.py` to use Hugging Face Accelerate framework for accelerated training.<br>
+**Execute `accelerate launch train.py` to use Hugging Face Accelerate framework for accelerated training**.<br>
