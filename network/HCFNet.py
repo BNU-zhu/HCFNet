@@ -118,8 +118,8 @@ class HCFNet(nn.Module):  # add non-local block
         self.pre_dense_4 = SingleConvBlock(256, 512, 1)
         self.pre_dense_5 = SingleConvBlock(512, 512, 1)
         self.pre_dense_6 = SingleConvBlock(512, 256, 1)
-         # <<<<<<<<<<< 修改: 用 SCP 替換 SDCM >>>>>>>>>>>>>
-        # Stacked Dilation Convolution-based Module is replaced by Regular Occlusion-Aware Module
+        
+        # SDCM is replaced by SCP Module
         self.SCP1 = SCP(64, 21)
         self.SCP2 = SCP(128, 21)
         self.SCP3 = SCP(256, 21)
@@ -135,7 +135,7 @@ class HCFNet(nn.Module):  # add non-local block
         self.up_block_5 = UpConvBlock(21, 4)
         self.up_block_6 = UpConvBlock(21, 4)
         
-        # Stochastic Occlusion-Aware module for final refinement
+        # ADP module for final refinement
         self.ADP = ADP(in_channels=6, out_channels=6)
 
         #self.block_cat = SingleConvBlock(6, 1, stride=1, use_bs=False) # Traditional edge fusion 
@@ -207,8 +207,8 @@ class HCFNet(nn.Module):  # add non-local block
         block_6_pre_dense = self.pre_dense_6(block_5)
         block_6, _ = self.dblock_6([block_5_add, block_6_pre_dense])
 
-        # <<<<<<<<<<< 修改: 使用 SCP 處理邊界特徵 >>>>>>>>>>>>>
-        # Apply Regular Occlusion-Aware modules to each side output
+        
+        # Apply SCP modules to each side output
         ROA1_out = self.SCP1(block_1)
         ROA2_out = self.SCP2(block_2)
         ROA3_out = self.SCP3(block_3)
